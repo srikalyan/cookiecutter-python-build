@@ -1,0 +1,10 @@
+# python
+__pycache__
+*.egg-info
+*.pyc
+cover
+build
+dist
+.eggs
+.coverage
+.tox

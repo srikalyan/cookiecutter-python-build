@@ -1,0 +1,39 @@
+before_script:
+  - pip install tox setuptools
+cache:
+  paths:
+  - /root/.cache
+stages:
+  - style
+  - test
+  - package
+
+py35:
+  stage: test
+  image: python:3.5
+  script:
+    - tox -e py35
+
+flake8:
+  image: python:latest
+  stage: style
+  script:
+    - tox -e flake8
+
+wheel:
+  image: python:3.5
+  stage: package
+  script:
+    tox -e wheel
+  artifacts:
+    paths:
+      - dist/
+
+sdist:
+  image: python:3.5
+  stage: package
+  script:
+    tox -e sdist
+  artifacts:
+    paths:
+      - dist/

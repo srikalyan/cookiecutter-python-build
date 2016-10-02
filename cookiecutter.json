@@ -1,0 +1,11 @@
+{
+  "repo_name": null,
+  "project_name": "{{ cookiecutter.repo_name|replace('-', '')|replace('_', '') }}",
+  "project_version": "1.0.0",
+  "project_description": "A simple python project",
+  "author": "Srikalyan Swayampakula",
+  "author_email": "",
+  "project_url": "http://www.srikalyan.com",
+
+  "include_gitlab_ci": "Y"
+}
