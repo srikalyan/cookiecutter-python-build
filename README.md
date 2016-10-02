@@ -1,5 +1,5 @@
 # Cookiecutter Python Build
-A simple cookie cutter for creating a python project.
+A simple cookie cutter for creating a python project with gitlab ci support.
 
 ## Usage
 
