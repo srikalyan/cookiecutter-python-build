@@ -1,4 +1,4 @@
-image: python:3.5
+image: python:3.6
 
 before_script:
   - pip install tox setuptools
@@ -13,7 +13,7 @@ stages:
 py35:
   stage: test
   script:
-    - tox -e py35
+    - tox -e py36
 
 flake8:
   stage: style
