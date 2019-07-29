@@ -3,6 +3,6 @@ All notable changes to this project will be documented in this file. This projec
 [Semantic Versioning][Semantic Versioning]
 
 ## 1.0.0
-Initial project
+Initial implementation
 
 [Semantic Versioning]: http://semver.org
