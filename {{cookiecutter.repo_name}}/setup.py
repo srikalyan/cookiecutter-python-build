@@ -1,8 +1,11 @@
 from setuptools import setup, find_packages
 
+# PLEASE DO NOT EDIT THIS
+__QUALIFIER__ = ""
+
 setup(
     name="{{ cookiecutter.project_name }}",
-    version="{{ cookiecutter.project_version }}",
+    version="{{ cookiecutter.project_version }}" + __QUALIFIER__,
     description="{{ cookiecutter.project_description }}",
     author="{{ cookiecutter.author}}",
     author_email="{{ cookiecutter.author_email }}",
