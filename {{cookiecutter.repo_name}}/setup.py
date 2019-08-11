@@ -1,12 +1,17 @@
 from setuptools import setup, find_packages
 
-# PLEASE DO NOT EDIT THIS
+# PLEASE DO NOT EDIT THIS, MANAGED FOR CI PURPOSES
 __QUALIFIER__ = ""
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 setup(
     name="{{ cookiecutter.project_name }}",
     version="{{ cookiecutter.project_version }}" + __QUALIFIER__,
     description="{{ cookiecutter.project_description }}",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author="{{ cookiecutter.author}}",
     author_email="{{ cookiecutter.author_email }}",
     url="{{ cookiecutter.project_url }}",
