@@ -1,11 +1,12 @@
 dist: xenial
 language: python
 python:
-- '3.7'
+  - '3.7'
 install:
-- pip install tox
+  - pip install tox qualifier
 script:
-- tox
+  - update_qualifier --no-use-git --branch-name "$TRAVIS_BRANCH" --tag-name "$TRAVIS_TAG"
+  - tox
 deploy:
   provider: pypi
   user: __token__
