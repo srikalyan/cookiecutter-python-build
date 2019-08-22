@@ -1,37 +1,18 @@
 image: python:3.7
 
 before_script:
-  - pip install tox setuptools
+  - pip install tox setuptools qualifier
 cache:
   paths:
   - /root/.cache
 stages:
-  - style
-  - test
-  - package
+  - build
 
-py37:
-  stage: test
+build:
+  stage: build
   script:
-    - tox -e py37
-
-flake8:
-  stage: style
-  script:
-    - tox -e flake8
-
-wheel:
-  stage: package
-  script:
-    tox -e wheel
-  artifacts:
-    paths:
-      - dist/
-
-sdist:
-  stage: package
-  script:
-    tox -e sdist
+    - update_qualifier --no-use-git --branch-name "$CI_COMMIT_REF_NAME" --tag-name "$CI_COMMIT_TAG"
+    - tox
   artifacts:
     paths:
       - dist/
